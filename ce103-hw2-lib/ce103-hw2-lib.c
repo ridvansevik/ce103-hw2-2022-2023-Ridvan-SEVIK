@@ -171,8 +171,22 @@ int ce103_fibonacciNumber(int fiIndex)
 **/
 char* ce103_strrev(char* fiStr)
 {
-	//TODO:Start from Here...
-	return 0;
+
+	char temp;                                                //A char variable named temp is created
+	int x, y, n;                                              //x, y and z variables are created of type integer
+
+	n = ce103_strlen(fiStr);                                  //We set the variable n to the ce103_strlen(fiStr) function
+
+	// swapping fiStr[i] and fiStr[j] until i<j
+	//Inside the loop we set x=0 and y=n-1 and when x<y we increase x and decrease y
+	for (x = 0, y = n - 1; x < y; ++x, --y) {
+
+		temp = fiStr[y];                                      //We set the variable temp to fiStr[y]. Here, fiStr[y] points to the yth character in the fiStr pointer of the temp character
+		fiStr[y] = fiStr[x];                                  //We set the fiStr[y] pointer to fiStr[x]
+		fiStr[x] = temp;                                      //We set the fiStr[x] pointer to the temp character
+	}
+
+	return fiStr;
 }
 
 /**
