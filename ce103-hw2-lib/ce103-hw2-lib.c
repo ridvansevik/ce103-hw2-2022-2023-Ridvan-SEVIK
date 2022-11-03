@@ -392,6 +392,12 @@ void ce103_bin2hex(unsigned char* fiBin, int fiBinLen, char* foHex)
 */
 int ce103_gcd(int fiNum1, int fiNum2)
 {
-	//TODO:Start from Here...
-	return -1;
+	int i, gcda;
+	for (i = 1; i <= fiNum1 && i <= fiNum2; ++i)
+	{
+		if (fiNum1 % i == 0 && fiNum2 % i == 0)
+			gcda = i;
+	}
+
+	return gcda;
 }
