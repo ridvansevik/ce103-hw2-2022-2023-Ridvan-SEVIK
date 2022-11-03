@@ -247,7 +247,39 @@ int ce103_strlen(const char* fiStr)
 char* ce103_strcat(char* fiDest, char* fiSrc)
 {
 	//TODO:Start from Here...
-	return 0;
+	char* start = fiDest;
+
+	while (*fiDest != '\0')
+	{
+		fiDest++;                      //fiDest is incremented by one
+	}
+
+	while (*fiSrc != '\0')             //When the fiSrc pointer is not equal to '\0', the fiDest pointer is set to the fiSrc pointer, and fiDest and fiSrc are incremented one by one
+	{
+
+		*fiDest = *fiSrc;              //fiDest pointer is set to the fiSrc pointer
+		fiDest++;                      //fiDest is incremented by one
+		fiSrc++;                       //fiStr is incremented by one
+	}
+
+	*fiDest = '\0';
+	return start;
+
+	/*
+		{
+			char* ret = fiDest;
+			//finding the length of the string
+			while (fiDest++ != '\0');
+			--fiDest;
+
+			//combines destand srcand do this until the combine words and returns a copy test
+			while ((fiDest++ == *fiSrc++) != '\0');
+
+			return ret;
+		}
+
+		;
+		*/
 }
 
 /**
