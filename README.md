@@ -1,3 +1,3 @@
-# CE103 HW-2 template without function body
+# CE103 HW-2022-2023-Ridvan-SEVIK
 
-Please check homework guide to complete this task
+This is my homework 2.1 and 2.2
