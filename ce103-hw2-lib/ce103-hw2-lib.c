@@ -197,7 +197,17 @@ char* ce103_strrev(char* fiStr)
 int ce103_strlen(const char* fiStr)
 {
 	//TODO:Start from Here...
-	return -1;
+
+	unsigned int a = 0;                    	//We define an unsigned integer variable a and set it equal to zero
+
+	while (*fiStr != '\0')                  //When fiStr variable is not equal to '\0', a loop is created to increment variable a and fiStr pointer by one
+	{
+
+		a++;                                //a is incremented by one
+		fiStr++;                            //fiStr is incremented by one
+	}
+
+	return a;
 }
 
 /**
