@@ -357,7 +357,29 @@ char* ce103_strcpy(char* foDestination, const char* fiSource)
  */
 void ce103_hex2bin(char* fiHex, int fiHexLen, unsigned char* foBin)
 {
-	//TODO:Start from Here...
+	int c, d;   /* Two integer values are defined, named c and d.*/
+	for (;;)
+	{
+		c =*fiHex++; if (c == 0) break;                          /* Here we take our input untill it overs.*/
+
+			if (c > 96) c -= 87;                                 /* Here we scan our input, we understand if it's a upper letter.*/
+
+			else if (c > 64) c -= 55;                            /*Here we scan our input, we understand if it's a lower letter.*/
+
+			else c -= 48;                                        /* Here we scan our input, we understand if it's a number*/
+
+		d =*fiHex++; if (d == 0) { *foBin = c << 4; break; }       /* Here we take our second input untill it overs.*/
+
+
+			if (d > 96) d -= 87;                                 /* Same operations are happening in here */
+
+			else if (d > 64) d -= 55;
+
+			else d -= 48;
+
+			*foBin++ = (c << 4) | d;                              /* foBin is set with 4 appended to c and d added to the end. */
+     }
+            return fiHex;               /* Return the fiHex value. */
 }
 
 /**
