@@ -396,6 +396,20 @@ void ce103_hex2bin(char* fiHex, int fiHexLen, unsigned char* foBin)
 void ce103_bin2hex(unsigned char* fiBin, int fiBinLen, char* foHex)
 {
 	//TODO:Start from Here...
+
+	int c, d, * end = fiBin + fiBinLen;                          /* Three integer values are defined, named c, d, and end.  */
+	while (fiBin < end)                                          /* As long as fiBin is less than end; */
+	{
+		c = (*fiBin++);                                          /* The value c is being added to the fiBin */
+			d = c >> 4;                                          /* d equals after the 4th character of c. */
+		(*foHex++) = d + (d > 9 ? 55 : 48);                      /* To convert cand d to HEX code, we add 55 if d is greater than 9 and 48 if not.*/
+			d = c & 15;                                          /* d is equal to the addition or subtraction of c and 15.*/
+		(*foHex++) = d + (d > 9 ? 55 : 48);                      /* To convert cand d to HEX code, we add 55 if d is greater than 9 and 48 if not.*/
+	}
+	*foHex = 0;                                                  /* foHex is set to 0. */
+
+		return fiBin;                                            /* Return the fiBin value */
+
 }
 
 
